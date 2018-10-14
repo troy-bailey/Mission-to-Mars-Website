@@ -1,0 +1,22 @@
+jumbotron {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    color: rgb(224, 188, 26);
+    background-color: rgb(207, 104, 44);
+}
+
+h1 {
+    color: rgb(61, 168, 161);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 28px;
+  
+}
+.jumbotron .h1, .jumbotron h1 {
+    color: rgb(224, 188, 26);
+    background-color: rgb(207, 104, 44);
+}
+
+.h3, h3 {
+    font-size: 240px;
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Barsoom</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+  <style type="text/css">
+    h1 {
+      color: rgb(224, 188, 26);
+      font-family: 'Wendy One', sans-serif;
+    }
+    .jumbotron {
+      color: rgb(224, 188, 26);
+      background-color: rgb(207, 104, 44);
+      margin-top: 15px;
+      background-image: url("{{url_for('static', filename='fftmm.jpg')}}");
+      background-size: 1200px;
+      background-position-y:-100px; 
+      height: 500px;
+    }
+    .container {
+      background-image: url("{{url_for('static', filename='14_cork texture-seamless.jpg')}}");
+      background-size: 500px;
+    }
+    .btn-primary {
+      color: rgb(224, 188, 26);
+      background-color: #4e2f0c;
+      border-color: #fff389;
+    }
+    .card-img-top {
+      margin:25px
+    }
+    .row{
+      padding-bottom: 15px;
+      /* padding-top: 15px; */
+    }
+    td{
+      padding-left: 5px;
+      font-family: 'Walter Turncoat', cursive;
+    }
+    hr{
+      border-color: black;
+    }
+
+
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Aclonica|Atomic+Age|Carter+One|Fugaz+One|Joti+One|Original+Surfer|Reenie+Beanie|Rock+Salt|Wendy+One" rel="stylesheet">  
+  <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Over+the+Rainbow|Walter+Turncoat" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class = "row"></div>
+    <div class="jumbotron text-center" >
+      <h1>Barsoom Update</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">ɑkh ɑhɪm ɑkte wiz bɑɹsu:m</a></p>
+    </div>
+
+    <!-- Mars Information -->
+    <div class="row" id="news">
+      <div class="col-md-11" style = "background-image: url('{{url_for('static', filename='white-paper-texture.jpg')}}'); margin-left: 40px; padding-bottom: 20px">
+        <h3>Latest Mars News</h3>
+        <hr>
+        <h4 class="heading">{{marsdata.news_title}}</h4>
+        <small>{{marsdata.news_p}}</small>
+      </div>
+    </div>
+    <div class="row" id="facts">
+      <div class="col-md-8">
+        <h2 style = "background-color: rgb(247, 237, 212); padding: 20px;font-family: 'Rock Salt', cursive;transform: rotate(-1deg);margin-bottom: -2px; margin-left: 10px;">Featured Mars Image</h2>
+        <img src = {{marsdata.featured_image_url}} alt="featured mars image" width= '100%'>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <div class="card" style = "background-image: url('{{url_for('static', filename='Old-Parchment-Textures.jpeg')}}'); padding: 10px; margin-right: 15px; transform: rotate(3deg)">
+            <div class="card-body">
+              <h2 class="card-title" style = "font-family: 'Over the Rainbow', cursive;">Current Weather on Mars</h2>
+              <h3 class="card-text"style = "font-family: 'Over the Rainbow', cursive">{{marsdata.mars_weather}}</h3>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="card" style = "background-image: url('{{url_for('static', filename='Orange-Tissue.jpg')}}'); padding: 10px; margin-right: 15px; margin-top: 15px;transform: skew(-1deg, -1deg);">
+              <div class="card-body">
+                <h4 class="card-title" style = "font-family: 'Walter Turncoat', cursive;">Mars Facts</h4>
+                <p class="card-text" style = "font-family: 'Walter Turncoat', cursive;">{{marsdata.mars_html_table|safe}}</p>
+              </div>
+            </div>
+          <!-- <h4>Mars Facts</h4>
+          {{marsdata.mars_html_table|safe}} -->
+        </div>
+      </div>
+    </div>
+    <div class="row" id="hemis">
+      <div class="col-md-12">
+        <h2 style = "background-color: rgb(247, 237, 212); padding: 20px;font-family: 'Rock Salt', cursive;">Mars Hemispheres</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card text-center" style = "background-color: rgb(243, 242, 239)">
+              <img class="card-img-top" src={{marsdata.hemisphere_images_urls[0].img_url}} alt="Card image cap" width = 90%>
+              <div class="card-body" style = "background-color: rgb(243, 242, 239)">
+                <h3 class="card-title" style = "background-color: rgb(243, 242, 239); padding-bottom: 20px;font-family: 'Rock Salt', cursive;">{{marsdata.hemisphere_images_urls[0].title}}</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+              <div class="card text-center" style = "background-color: rgb(243, 242, 239)">
+                <img class="card-img-top" src={{marsdata.hemisphere_images_urls[1].img_url}} alt="Card image cap" width = 90%>
+                <div class="card-body" style = "background-color: rgb(243, 242, 239)">
+                  <h3 class="card-title" style = "background-color: rgb(243, 242, 239); padding-bottom: 20px;font-family: 'Rock Salt', cursive;">{{marsdata.hemisphere_images_urls[1].title}}</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+              <div class="card text-center" style = "background-color: rgb(243, 242, 239)">
+                <img class="card-img-top" src={{marsdata.hemisphere_images_urls[2].img_url}} alt="Card image cap" width = 90%>
+                <div class="card-body" style = "background-color: rgb(243, 242, 239)">
+                  <h3 class="card-title" style = "background-color: rgb(243, 242, 239); padding-bottom: 20px;font-family: 'Rock Salt', cursive;">{{marsdata.hemisphere_images_urls[2].title}}</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card text-center" style = "background-color: rgb(243, 242, 239)">
+              <img class="card-img-top" src={{marsdata.hemisphere_images_urls[3].img_url}} alt="Card image cap" width = 90%>
+              <div class="card-body" style = "background-color: rgb(243, 242, 239)">
+                <h3 class="card-title" style = "background-color: rgb(243, 242, 239); padding-bottom: 20px;font-family: 'Rock Salt', cursive;">{{marsdata.hemisphere_images_urls[3].title}}</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
