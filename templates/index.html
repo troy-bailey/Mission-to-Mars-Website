@@ -25,6 +25,10 @@
     .container {
       background-image: url("{{url_for('static', filename='14_cork texture-seamless.jpg')}}");
       background-size: 500px;
+      /* width: 1400px; */
+      padding-left: 50px;
+      padding-right: 50px;
+
     }
     .btn-primary {
       color: rgb(224, 188, 26);
@@ -50,6 +54,7 @@
   </style>
   <link href="https://fonts.googleapis.com/css?family=Aclonica|Atomic+Age|Carter+One|Fugaz+One|Joti+One|Original+Surfer|Reenie+Beanie|Rock+Salt|Wendy+One" rel="stylesheet">  
   <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Over+the+Rainbow|Walter+Turncoat" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
 </head>
 
 <body>
@@ -62,9 +67,14 @@
 
     <!-- Mars Information -->
     <div class="row" id="news">
+      <div class="col-md-2" style = "background-color: rgba(247, 237, 212, 0.397); transform: translate(500px, 5px);">
+        <div class = "row"> </div>
+        <div class = "row"> </div>
+      </div>
       <div class="col-md-11" style = "background-image: url('{{url_for('static', filename='white-paper-texture.jpg')}}'); margin-left: 40px; padding-bottom: 20px">
-        <h3>Latest Mars News</h3>
+        <h2 style ="font-family: 'EB Garamond', serif;">Latest Mars News</h2>
         <hr>
+
         <h4 class="heading">{{marsdata.news_title}}</h4>
         <small>{{marsdata.news_p}}</small>
       </div>
@@ -78,6 +88,7 @@
         <div class="row">
           <div class="card" style = "background-image: url('{{url_for('static', filename='Old-Parchment-Textures.jpeg')}}'); padding: 10px; margin-right: 15px; transform: rotate(3deg)">
             <div class="card-body">
+              <img src= {{url_for('static', filename="clipart1990576785.png")}} alt="Pushpin" width=75px style = "transform: translateX(100px)"> 
               <h2 class="card-title" style = "font-family: 'Over the Rainbow', cursive;">Current Weather on Mars</h2>
               <h3 class="card-text"style = "font-family: 'Over the Rainbow', cursive">{{marsdata.mars_weather}}</h3>
             </div>
@@ -100,7 +111,7 @@
         <h2 style = "background-color: rgb(247, 237, 212); padding: 20px;font-family: 'Rock Salt', cursive;">Mars Hemispheres</h2>
         <div class="row">
           <div class="col-md-6">
-            <div class="card text-center" style = "background-color: rgb(243, 242, 239)">
+            <div class="card text-center" style = "background-color: rgb(243, 242, 239);transform: rotate(1deg)">
               <img class="card-img-top" src={{marsdata.hemisphere_images_urls[0].img_url}} alt="Card image cap" width = 90%>
               <div class="card-body" style = "background-color: rgb(243, 242, 239)">
                 <h3 class="card-title" style = "background-color: rgb(243, 242, 239); padding-bottom: 20px;font-family: 'Rock Salt', cursive;">{{marsdata.hemisphere_images_urls[0].title}}</h3>
@@ -126,7 +137,7 @@
             </div>
           </div>
           <div class="col-md-6">
-            <div class="card text-center" style = "background-color: rgb(243, 242, 239)">
+            <div class="card text-center" style = "background-color: rgb(243, 242, 239);transform: rotate(-1deg)">
               <img class="card-img-top" src={{marsdata.hemisphere_images_urls[3].img_url}} alt="Card image cap" width = 90%>
               <div class="card-body" style = "background-color: rgb(243, 242, 239)">
                 <h3 class="card-title" style = "background-color: rgb(243, 242, 239); padding-bottom: 20px;font-family: 'Rock Salt', cursive;">{{marsdata.hemisphere_images_urls[3].title}}</h3>
