@@ -61,7 +61,7 @@
   <div class="container">
     <div class = "row"></div>
     <div class="jumbotron text-center" >
-      <h1>Barsoom Update</h1>
+      <h1>Return to Barsoom</h1>
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">ɑkh ɑhɪm ɑkte wiz bɑɹsu:m</a></p>
     </div>
 
@@ -111,9 +111,11 @@
         <h2 style = "background-color: rgb(247, 237, 212); padding: 20px;font-family: 'Rock Salt', cursive;">Mars Hemispheres</h2>
         <div class="row">
           <div class="col-md-6">
+
             <div class="card text-center" style = "background-color: rgb(243, 242, 239);transform: rotate(1deg)">
               <img class="card-img-top" src={{marsdata.hemisphere_images_urls[0].img_url}} alt="Card image cap" width = 90%>
-              <div class="card-body" style = "background-color: rgb(243, 242, 239)">
+              <img src= {{url_for('static', filename="clipart1990576785.png")}} alt="Pushpin" width=75px style = "transform: translate(30%, -750%); margin: -30px"> 
+              <div class="card-body" style = "background-color: rgb(243, 242, 239); margin-top:-50px">
                 <h3 class="card-title" style = "background-color: rgb(243, 242, 239); padding-bottom: 20px;font-family: 'Rock Salt', cursive;">{{marsdata.hemisphere_images_urls[0].title}}</h3>
               </div>
             </div>
@@ -121,7 +123,8 @@
           <div class="col-md-6">
               <div class="card text-center" style = "background-color: rgb(243, 242, 239)">
                 <img class="card-img-top" src={{marsdata.hemisphere_images_urls[1].img_url}} alt="Card image cap" width = 90%>
-                <div class="card-body" style = "background-color: rgb(243, 242, 239)">
+                <img src= {{url_for('static', filename="clipart1990576785.png")}} alt="Pushpin" width=75px style = "transform: translate(60%, -725%); margin: -30px"> 
+                <div class="card-body" style = "background-color: rgb(243, 242, 239); margin-top:-50px">
                   <h3 class="card-title" style = "background-color: rgb(243, 242, 239); padding-bottom: 20px;font-family: 'Rock Salt', cursive;">{{marsdata.hemisphere_images_urls[1].title}}</h3>
               </div>
             </div>
@@ -131,7 +134,8 @@
           <div class="col-md-6">
               <div class="card text-center" style = "background-color: rgb(243, 242, 239)">
                 <img class="card-img-top" src={{marsdata.hemisphere_images_urls[2].img_url}} alt="Card image cap" width = 90%>
-                <div class="card-body" style = "background-color: rgb(243, 242, 239)">
+                <img src= {{url_for('static', filename="clipart1990576785.png")}} alt="Pushpin" width=75px style = "transform: translate(-70%, -775%); margin: -30px"> 
+                <div class="card-body" style = "background-color: rgb(243, 242, 239); margin-top:-50px">
                   <h3 class="card-title" style = "background-color: rgb(243, 242, 239); padding-bottom: 20px;font-family: 'Rock Salt', cursive;">{{marsdata.hemisphere_images_urls[2].title}}</h3>
               </div>
             </div>
@@ -139,7 +143,8 @@
           <div class="col-md-6">
             <div class="card text-center" style = "background-color: rgb(243, 242, 239);transform: rotate(-1deg)">
               <img class="card-img-top" src={{marsdata.hemisphere_images_urls[3].img_url}} alt="Card image cap" width = 90%>
-              <div class="card-body" style = "background-color: rgb(243, 242, 239)">
+              <img src= {{url_for('static', filename="clipart1990576785.png")}} alt="Pushpin" width=75px style = "transform: translate(0%, -735%); margin: -30px">
+              <div class="card-body" style = "background-color: rgb(243, 242, 239); margin-top:-50px">
                 <h3 class="card-title" style = "background-color: rgb(243, 242, 239); padding-bottom: 20px;font-family: 'Rock Salt', cursive;">{{marsdata.hemisphere_images_urls[3].title}}</h3>
               </div>
             </div>
