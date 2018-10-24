@@ -11,7 +11,7 @@ import re
 
 # Import Splinter and set the chromedriver path
 from splinter import Browser
-executable_path = {"executable_path": "/usr/local/bin/chromedriver"}
+executable_path = {"executable_path": "chromedriver"}
 browser = Browser("chrome", **executable_path, headless=False)
 
 ##############################################################
